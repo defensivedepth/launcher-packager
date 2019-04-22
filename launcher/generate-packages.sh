@@ -9,10 +9,10 @@
 
 ###---Initial Prep
 mkdir /etc/launcher
-mkdir -p /var/launcher/msi/{msi,deb,rpm,pkg}
+mkdir -p /var/launcher/{msi,deb,rpm,pkg}
 
-#Update enroll secret - using @ delimeters because secret can contain /+
-sed -i 's@secret@'"$1"'@' src/config/secret
+#Update enroll secret
+printf "$1" > src/config/secret
 
 #Update hostname
 sed -i 's@ninja@'"$2"'@' /var/launcher/src/config/launcher-msi.flags
