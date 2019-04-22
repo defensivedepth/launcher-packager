@@ -9,6 +9,7 @@
 
 ###---Initial Prep
 mkdir /etc/launcher
+mkdir -p /var/launcher/msi/{msi,deb,rpm,pkg}
 
 #Update enroll secret - using @ delimeters because secret can contain /+
 sed -i 's@secret@'"$1"'@' src/config/secret
